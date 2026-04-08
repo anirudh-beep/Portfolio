@@ -1,6 +1,6 @@
 'use client'
 
-import { GitBranch, Linkedin, Mail, ArrowRight, Code2 } from 'lucide-react'
+import { GitBranch, Briefcase, Mail, ArrowRight, Code2 } from 'lucide-react'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -76,7 +76,7 @@ export function Footer() {
                 className="text-foreground/70 hover:text-primary transition-colors text-sm inline-flex items-center gap-2 group"
                 aria-label="LinkedIn"
               >
-                <Linkedin size={18} />
+                <Briefcase size={18} />
                 <span>LinkedIn</span>
               </a>
               <a
