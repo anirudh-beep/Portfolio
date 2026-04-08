@@ -30,7 +30,7 @@ export function Header() {
 
         {/* CTA Button and Mobile Menu */}
         <div className="flex items-center gap-3">
-          <a href="mailto:contact@example.com" className="hidden sm:block button-secondary text-sm">
+          <a href="mailto:anirudhreddymosra@gmail.com" className="hidden sm:block button-secondary text-sm">
             Get in Touch
           </a>
 
@@ -70,7 +70,7 @@ export function Header() {
                 Contact
               </a>
               <a
-                href="mailto:contact@example.com"
+                href="mailto:anirudhreddymosra@gmail.com"
                 className="button-secondary justify-center mt-2"
                 onClick={() => setIsOpen(false)}
               >

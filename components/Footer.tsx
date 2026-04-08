@@ -24,7 +24,7 @@ export function Footer() {
             <p className="text-foreground/70 text-sm leading-relaxed mb-6">
               Building innovative solutions that span across agriculture, gaming, AI, and data science.
             </p>
-            <a href="mailto:contact@example.com" className="button-secondary inline-flex items-center gap-2 text-sm group">
+            <a href="mailto:anirudhreddymosra@gmail.com" className="button-secondary inline-flex items-center gap-2 text-sm group">
               Let&apos;s Work Together
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </a>
@@ -70,7 +70,7 @@ export function Footer() {
                 <span>GitHub</span>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/mosra-anirudh-reddy-749899333/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/70 hover:text-primary transition-colors text-sm inline-flex items-center gap-2 group"
@@ -80,7 +80,7 @@ export function Footer() {
                 <span>LinkedIn</span>
               </a>
               <a
-                href="mailto:contact@example.com"
+                href="mailto:anirudhreddymosra@gmail.com"
                 className="text-foreground/70 hover:text-primary transition-colors text-sm inline-flex items-center gap-2 group"
                 aria-label="Email"
               >
