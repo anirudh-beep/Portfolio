@@ -75,41 +75,65 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section className="py-24 px-4">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-32 px-4 md:px-6 relative">
+      {/* Background gradient */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/2 -right-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative">
         {/* Header */}
-        <div className="mb-16 text-center animate-fade-in-up">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 gradient-text">
+        <div className="mb-20 text-center animate-fade-in-up">
+          <h2 className="section-title gradient-text mb-6">
             Featured Projects
-          </h1>
-          <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
-            Innovative solutions across agriculture, gaming, AI, and data science.
-            Each project demonstrates technical excellence and creative problem-solving.
+          </h2>
+          <p className="section-subtitle max-w-3xl mx-auto">
+            A curated selection of innovative solutions spanning agriculture technology, interactive gaming, AI systems, and data intelligence. Each project showcases technical excellence and creative problem-solving.
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-max">
-          {projects.map((project, idx) => (
-            <div
-              key={project.id}
-              className={`animate-fade-in-up`}
-              style={{
-                animationDelay: `${idx * 100}ms`,
-              }}
-            >
+        {/* Projects Grid - Featured First, Then 3-column Grid */}
+        <div className="space-y-8">
+          {/* Featured Project */}
+          {projects.find(p => p.isFeatured) && (
+            <div className="animate-fade-in-up">
               <ProjectCard
-                title={project.title}
-                description={project.description}
-                features={project.features}
-                technologies={project.technologies}
-                liveUrl={project.liveUrl}
-                githubUrl={project.githubUrl}
-                icon={project.icon}
-                isFeatured={project.isFeatured}
+                title={projects.find(p => p.isFeatured)!.title}
+                description={projects.find(p => p.isFeatured)!.description}
+                features={projects.find(p => p.isFeatured)!.features}
+                technologies={projects.find(p => p.isFeatured)!.technologies}
+                liveUrl={projects.find(p => p.isFeatured)!.liveUrl}
+                githubUrl={projects.find(p => p.isFeatured)!.githubUrl}
+                icon={projects.find(p => p.isFeatured)!.icon}
+                isFeatured={true}
               />
             </div>
-          ))}
+          )}
+
+          {/* Other Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.filter(p => !p.isFeatured).map((project, idx) => (
+              <div
+                key={project.id}
+                className="animate-fade-in-up"
+                style={{
+                  animationDelay: `${(idx + 1) * 100}ms`,
+                }}
+              >
+                <ProjectCard
+                  title={project.title}
+                  description={project.description}
+                  features={project.features}
+                  technologies={project.technologies}
+                  liveUrl={project.liveUrl}
+                  githubUrl={project.githubUrl}
+                  icon={project.icon}
+                  isFeatured={false}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -5,13 +5,15 @@ import { Footer } from '@/components/Footer'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
+    <>
       <Header />
-      <HeroSection />
-      <section id="projects">
-        <ProjectsSection />
-      </section>
+      <main className="min-h-screen">
+        <HeroSection />
+        <section id="projects">
+          <ProjectsSection />
+        </section>
+      </main>
       <Footer />
-    </main>
+    </>
   )
 }
