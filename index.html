@@ -3,88 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anirudh Reddy Mosra — AI/ML Engineer</title>
+<title>Anirudh Reddy Mosra | AI/ML Engineer</title>
+<meta name="description" content="Portfolio of Anirudh Reddy Mosra, a CSE (AI & ML) student working on LLM agents and full-stack applications.">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
   :root{
-    --ink:#450C3F;
-    --ink-2:#57154F;
+    --ink:#091540;
+    --ink-2:#12225C;
     --paper:#F5FBDA;
     --paper-dim:#D9EFBD;
     --signal:#B9D175;
     --signal-hover:#CBE097;
-    --signal-dim: rgba(185,209,117,0.65);
-    --line: rgba(245,251,218,0.18);
-    --nav-bg: rgba(69,12,63,0.86);
-    --on-signal:#2E0829;
+    --signal-dim:rgba(185,209,117,0.65);
+    --line:rgba(245,251,218,0.18);
+    --nav-bg:rgba(9,21,64,0.88);
+    --on-signal:#091540;
   }
-
   html[data-theme="light"]{
     --ink:#F5FBDA;
     --ink-2:#EAF2CC;
-    --paper:#450C3F;
-    --paper-dim: rgba(69,12,63,0.82);
-    --signal:#8CA85B;
-    --signal-hover:#79934A;
-    --signal-dim: rgba(140,168,91,0.7);
-    --line: rgba(69,12,63,0.2);
-    --nav-bg: rgba(245,251,218,0.92);
+    --paper:#091540;
+    --paper-dim:rgba(9,21,64,0.82);
+    --signal:#6F8A3F;
+    --signal-hover:#5C7533;
+    --signal-dim:rgba(111,138,63,0.75);
+    --line:rgba(9,21,64,0.2);
+    --nav-bg:rgba(245,251,218,0.92);
     --on-signal:#F5FBDA;
   }
 
   *{ box-sizing:border-box; }
-  html{ scroll-behavior:smooth; }
+  html{ scroll-behavior:smooth; scroll-padding-top:70px; }
   body{
-    margin:0;
-    background:var(--ink);
-    color:var(--paper);
-    font-family:'Space Grotesk', sans-serif;
-    font-size:17px;
-    line-height:1.5;
+    margin:0; background:var(--ink); color:var(--paper);
+    font-family:'Space Grotesk', sans-serif; font-size:17px; line-height:1.5;
     transition:background-color .25s ease, color .25s ease;
   }
   ::selection{ background:var(--signal); color:var(--on-signal); }
-
-  h1,h2,h3{
-    font-family:'Fraunces', serif;
-    font-weight:500;
-    letter-spacing:-0.01em;
-    margin:0;
-  }
-
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--signal); outline-offset:3px; }
+  h1,h2,h3{ font-family:'Fraunces', serif; font-weight:500; letter-spacing:-0.01em; margin:0; }
   a{ color:inherit; }
+  .wrap{ max-width:920px; margin:0 auto; padding:0 28px; }
 
-  .wrap{
-    max-width:920px;
-    margin:0 auto;
-    padding:0 28px;
-  }
-
-  /* ---------- NAV ---------- */
   nav{
-    position:sticky; top:0; z-index:20;
-    background:var(--nav-bg);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
+    position:sticky; top:0; z-index:20; background:var(--nav-bg);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
     transition:background-color .25s ease;
   }
   nav .wrap{
     display:flex; align-items:center; justify-content:space-between;
-    flex-wrap:wrap; gap:10px;
-    padding-top:14px; padding-bottom:14px;
+    flex-wrap:wrap; gap:10px; padding-top:14px; padding-bottom:14px;
   }
   .nav-right{ display:flex; align-items:center; gap:22px; }
   .theme-toggle{
-    width:36px; height:36px;
-    display:flex; align-items:center; justify-content:center;
-    border:1px solid var(--line);
-    background:transparent;
-    color:var(--paper);
-    cursor:pointer;
-    border-radius:100px;
-    transition:border-color .2s, color .2s;
-    padding:0;
+    width:36px; height:36px; display:flex; align-items:center; justify-content:center;
+    border:1px solid var(--line); background:transparent; color:var(--paper);
+    cursor:pointer; border-radius:100px; transition:border-color .2s, color .2s; padding:0;
   }
   .theme-toggle:hover{ border-color:var(--signal); color:var(--signal); }
   .theme-toggle svg{ width:17px; height:17px; }
@@ -96,255 +71,96 @@
   .nav-links a{ text-decoration:none; transition:color .2s; }
   .nav-links a:hover{ color:var(--signal); }
 
-  /* ---------- HERO ---------- */
-  header.hero{
-    padding:96px 0 72px;
-    border-bottom:1px solid var(--line);
-  }
+  header.hero{ padding:96px 0 72px; border-bottom:1px solid var(--line); }
   .kicker{
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.82rem;
-    color:var(--signal);
-    margin-bottom:22px;
-    display:flex; align-items:center; gap:10px;
+    font-family:'JetBrains Mono', monospace; font-size:0.82rem; color:var(--signal);
+    margin-bottom:22px; display:flex; align-items:center; gap:10px;
   }
-  .kicker::before{
-    content:"";
-    width:7px; height:7px; border-radius:50%;
-    background:var(--signal);
-    display:inline-block;
-  }
-  h1.title{
-    font-size:clamp(2.6rem, 6vw, 4.1rem);
-    line-height:1.05;
-    max-width:15ch;
-    letter-spacing:-0.02em;
-  }
-  .hero-sub{
-    margin-top:24px;
-    max-width:48ch;
-    font-size:1.15rem;
-    color:var(--paper-dim);
-  }
+  .kicker::before{ content:""; width:7px; height:7px; border-radius:50%; background:var(--signal); display:inline-block; }
+  h1.title{ font-size:clamp(2.4rem, 5.4vw, 3.8rem); line-height:1.08; max-width:17ch; letter-spacing:-0.02em; }
+  .hero-sub{ margin-top:0; max-width:52ch; font-size:1.12rem; color:var(--paper-dim); }
   .hero-sub strong{ color:var(--paper); font-weight:600; }
-
-  .hero-meta{
-    margin-top:40px;
-    display:flex; flex-wrap:wrap; gap:14px;
-  }
+  .hero-meta{ margin-top:40px; display:flex; flex-wrap:wrap; gap:14px; }
   .pill{
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.78rem;
-    padding:7px 14px;
-    border:1px solid var(--line);
-    border-radius:100px;
-    color:var(--paper-dim);
+    font-family:'JetBrains Mono', monospace; font-size:0.78rem; padding:7px 14px;
+    border:1px solid var(--line); border-radius:100px; color:var(--paper-dim);
   }
-
-  .hero-actions{
-    margin-top:36px;
-    display:flex; flex-wrap:wrap; gap:14px;
-  }
+  .hero-actions{ margin-top:36px; display:flex; flex-wrap:wrap; gap:14px; }
   .btn{
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.85rem;
-    text-decoration:none;
-    padding:13px 22px;
-    border:1px solid var(--paper);
-    color:var(--paper);
-    display:inline-block;
-    transition:all .18s ease;
+    font-family:'JetBrains Mono', monospace; font-size:0.85rem; text-decoration:none;
+    padding:13px 22px; border:1px solid var(--paper); color:var(--paper);
+    display:inline-flex; align-items:center; gap:9px; transition:all .18s ease;
   }
+  .btn svg{ width:16px; height:16px; }
   .btn:hover{ background:var(--paper); color:var(--ink); }
-  .btn.solid{
-    background:var(--signal); border-color:var(--signal); color:var(--on-signal);
-  }
+  .btn.solid{ background:var(--signal); border-color:var(--signal); color:var(--on-signal); }
   .btn.solid:hover{ background:var(--signal-hover); border-color:var(--signal-hover); color:var(--on-signal); }
 
-  /* ---------- SECTION GENERIC ---------- */
   section{ padding:76px 0; border-bottom:1px solid var(--line); }
-  .section-head{
-    display:flex; align-items:baseline; justify-content:space-between;
-    margin-bottom:44px;
-    gap:20px;
-  }
+  .section-head{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:44px; gap:20px; }
   .section-head h2{ font-size:2rem; letter-spacing:-0.015em; }
-  .section-index{
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.8rem; color:var(--signal-dim);
-  }
+  .section-index{ font-family:'JetBrains Mono', monospace; font-size:0.8rem; color:var(--signal-dim); }
 
-  .resume-grid{
-    display:grid;
-    grid-template-columns:1.4fr 1fr;
-    gap:24px;
-    margin-top:12px;
-  }
-  .info-card{
-    background:var(--ink-2);
-    border:1px solid var(--line);
-    padding:24px 22px;
-  }
+  .resume-grid{ display:grid; grid-template-columns:1.4fr 1fr; gap:24px; margin-top:12px; }
+  .info-card{ background:var(--ink-2); border:1px solid var(--line); padding:24px 22px; }
   .info-card h3{
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.8rem;
-    color:var(--signal);
-    margin-bottom:12px;
-    font-weight:500;
-    letter-spacing:0.04em;
+    font-family:'JetBrains Mono', monospace; font-size:0.8rem; color:var(--signal);
+    margin-bottom:12px; font-weight:500; letter-spacing:0.04em;
   }
-  .info-card p{
-    margin:0;
-    color:var(--paper-dim);
-    font-size:0.96rem;
-  }
-  .mini-list{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    margin-top:18px;
-  }
+  .info-card p{ margin:0; color:var(--paper-dim); font-size:0.96rem; }
 
-
-
-  .focus-grid{
-    display:grid;
-    grid-template-columns:1.1fr 1.2fr;
-    gap:24px;
-  }
-  .focus-copy{
-    color:var(--paper-dim);
-    font-size:0.98rem;
-  }
-  .focus-list{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:18px;
-  }
+  .focus-grid{ display:grid; grid-template-columns:1.1fr 1.2fr; gap:24px; }
+  .focus-copy{ color:var(--paper-dim); font-size:0.98rem; }
+  .focus-list{ display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
   .focus-pill{
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.72rem;
-    padding:7px 11px;
-    border:1px solid var(--line);
-    background:var(--ink-2);
-    color:var(--paper);
+    font-family:'JetBrains Mono', monospace; font-size:0.72rem; padding:7px 11px;
+    border:1px solid var(--line); background:var(--ink-2); color:var(--paper);
   }
 
-  /* ---------- SKILLS ---------- */
-  .skill-groups{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:36px 48px;
-  }
+  .skill-groups{ display:grid; grid-template-columns:1fr 1fr; gap:36px 48px; }
   .skill-group h3{
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.78rem;
-    font-weight:500;
-    color:var(--signal);
-    text-transform:none;
-    margin-bottom:14px;
-    letter-spacing:0.02em;
+    font-family:'JetBrains Mono', monospace; font-size:0.78rem; font-weight:500;
+    color:var(--signal); margin-bottom:14px; letter-spacing:0.02em;
   }
-  .skill-row{
-    display:flex; flex-wrap:wrap; gap:8px;
-  }
-  .chip{
-    font-size:0.86rem;
-    padding:6px 12px;
-    background:var(--ink-2);
-    border:1px solid var(--line);
-    color:var(--paper);
-  }
+  .skill-row{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{ font-size:0.86rem; padding:6px 12px; background:var(--ink-2); border:1px solid var(--line); color:var(--paper); }
 
-  /* ---------- PROJECTS ---------- */
-  .project{
-    display:grid;
-    grid-template-columns:56px 1fr;
-    gap:24px;
-    padding:32px 0;
-    border-top:1px solid var(--line);
-  }
+  .project{ display:grid; grid-template-columns:56px 1fr; gap:24px; padding:32px 0; border-top:1px solid var(--line); }
   .project:first-of-type{ border-top:none; padding-top:0; }
-  .project-num{
-    font-family:'Fraunces', serif;
-    font-style:italic;
-    font-size:1.6rem;
-    color:var(--signal-dim);
-  }
-  .project h3{
-    font-size:1.4rem;
-    margin-bottom:10px;
-    color:var(--paper);
-  }
+  .project-num{ font-family:'Fraunces', serif; font-style:italic; font-size:1.6rem; color:var(--signal-dim); }
+  .project h3{ font-size:1.4rem; margin-bottom:8px; color:var(--paper); }
   .project-status{
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.72rem;
-    color:var(--signal);
-    margin-left:10px;
-    vertical-align:middle;
+    font-family:'JetBrains Mono', monospace; font-size:0.72rem; color:var(--signal);
+    margin-left:10px; vertical-align:middle;
   }
-  .project p{
-    color:var(--paper-dim);
-    max-width:64ch;
-    font-size:0.97rem;
-    margin-bottom:14px;
+  .project p.project-role{
+    font-family:'JetBrains Mono', monospace; font-size:0.78rem; color:var(--signal);
+    margin:0 0 12px; max-width:none;
   }
-  .project-tags{
-    display:flex; flex-wrap:wrap; gap:8px;
-  }
+  .project p{ color:var(--paper-dim); max-width:64ch; font-size:0.97rem; margin:0 0 14px; }
+  .project-tags{ display:flex; flex-wrap:wrap; gap:8px; }
   .tag{
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.72rem;
-    color:var(--paper-dim);
-    border:1px solid var(--line);
-    padding:4px 10px;
+    font-family:'JetBrains Mono', monospace; font-size:0.72rem; color:var(--paper-dim);
+    border:1px solid var(--line); padding:4px 10px;
   }
 
-  /* ---------- EXPERIENCE / EDUCATION TIMELINE ---------- */
-  .timeline-item{
-    display:grid;
-    grid-template-columns:150px 1fr;
-    gap:24px;
-    padding:22px 0;
-    border-top:1px solid var(--line);
-  }
+  .timeline-item{ display:grid; grid-template-columns:150px 1fr; gap:24px; padding:22px 0; border-top:1px solid var(--line); }
   .timeline-item:first-of-type{ border-top:none; }
-  .timeline-date{
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.8rem;
-    color:var(--paper-dim);
-  }
+  .timeline-date{ font-family:'JetBrains Mono', monospace; font-size:0.8rem; color:var(--paper-dim); }
   .timeline-body h3{ font-size:1.08rem; margin-bottom:4px; }
   .timeline-body .org{ color:var(--signal); font-size:0.9rem; margin-bottom:8px; }
-  .timeline-body p{ color:var(--paper-dim); font-size:0.92rem; max-width:60ch; }
+  .timeline-body p{ color:var(--paper-dim); font-size:0.92rem; max-width:60ch; margin:0 0 8px; }
 
-  /* ---------- CONTACT ---------- */
-  .contact-block{
-    padding:76px 0 96px;
-  }
-  .contact-block h2{
-    font-size:clamp(1.8rem, 4vw, 2.6rem);
-    max-width:16ch;
-    margin-bottom:26px;
-  }
-  .contact-grid{
-    display:flex; flex-wrap:wrap; gap:16px;
-    margin-top:8px;
-  }
-  footer{
-    padding:28px 0 40px;
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.76rem;
-    color:var(--paper-dim);
-    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
-  }
+  .contact-block{ padding:76px 0 96px; border-bottom:none; }
+  .contact-block h2{ font-size:clamp(1.8rem, 4vw, 2.6rem); max-width:16ch; margin-bottom:26px; }
+  .contact-grid{ display:flex; flex-wrap:wrap; gap:16px; margin-top:8px; }
+  footer{ padding:28px 0 40px; font-family:'JetBrains Mono', monospace; font-size:0.76rem; color:var(--paper-dim); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
 
   @media (max-width:640px){
     .wrap{ padding:0 20px; }
     .skill-groups{ grid-template-columns:1fr; gap:28px; }
-    .resume-grid{ grid-template-columns:1fr; }
-    .focus-grid{ grid-template-columns:1fr; gap:28px; }
+    .resume-grid, .focus-grid{ grid-template-columns:1fr; gap:24px; }
     .project{ grid-template-columns:1fr; }
     .project-num{ display:none; }
     .timeline-item{ grid-template-columns:1fr; gap:6px; }
@@ -355,20 +171,11 @@
     header.hero{ padding:56px 0 44px; }
     section{ padding:52px 0; }
     .section-head{ margin-bottom:32px; flex-wrap:wrap; }
-    .hero-actions{ flex-direction:column; align-items:stretch; }
-    .btn{ text-align:center; }
-    .contact-grid{ flex-direction:column; align-items:stretch; }
+    .hero-actions, .contact-grid{ flex-direction:column; align-items:stretch; }
+    .btn{ justify-content:center; }
     footer .wrap{ flex-direction:column; gap:6px; }
   }
-
-  @media (max-width:400px){
-    h1.title{ max-width:100%; }
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior:auto; }
-    *{ transition:none !important; }
-  }
+  @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } *{ transition:none !important; } }
 </style>
 </head>
 <body>
@@ -383,14 +190,9 @@
         <a href="#background">Background</a>
         <a href="#contact">Contact</a>
       </div>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="4"></circle>
-          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
-        </svg>
-        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path>
-        </svg>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path></svg>
       </button>
     </div>
   </div>
@@ -399,18 +201,20 @@
 <header class="hero">
   <div class="wrap">
     <div class="kicker">OPEN TO INTERNSHIPS — FULL STACK &amp; AI/ML</div>
-    <h1 class="title" id="headline">I build AI systems that reason, not just respond.</h1>
     <p class="hero-sub">
-      <strong>Anirudh Reddy Mosra</strong> — final-year CSE (AI &amp; ML) student at MLR Institute of Technology, Hyderabad.
-      I build LLM-powered and full-stack applications across Python, Java, and React.
+      <strong>Anirudh Reddy Mosra</strong>, final-year CSE (AI &amp; ML) student at MLR Institute of Technology, Hyderabad.
+      Projects cover LLM agents, local model tooling and full-stack apps in Python, TypeScript and React.
     </p>
     <div class="hero-meta">
       <span class="pill">B.Tech CSE (AI &amp; ML) · Class of 2027</span>
       <span class="pill">Hyderabad, India</span>
-      <span class="pill">LangChain · React · Electron</span>
+      <span class="pill">LangChain · LangGraph · React · FastAPI</span>
     </div>
     <div class="hero-actions">
-      <a class="btn solid" href="mailto:anirudhreddymosra@gmail.com?subject=Resume%20Request">Request resume</a>
+      <a class="btn solid" href="Resume.pdf" download="Anirudh_Reddy_Mosra_Resume.pdf">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"></path></svg>
+        Download resume
+      </a>
       <a class="btn" href="#work">See my work</a>
     </div>
   </div>
@@ -426,15 +230,13 @@
       <div class="info-card">
         <h3>SUMMARY</h3>
         <p>
-          I connect models to real data and usable interfaces — local LLM integrations, multi-agent systems,
-          and desktop apps that help people decide faster.
+          Focus on connecting models to real data and usable interfaces: local LLM integrations,
+          multi-agent systems and desktop apps that help people decide faster.
         </p>
       </div>
       <div class="info-card">
         <h3>LOOKING FOR</h3>
-        <p>
-          Internships in AI/ML and full-stack engineering, building real systems with strong teams.
-        </p>
+        <p>Internships in AI/ML and full-stack engineering with a team building real systems.</p>
       </div>
     </div>
   </div>
@@ -450,18 +252,16 @@
       <div class="info-card">
         <h3>ACTIVE AREAS</h3>
         <p class="focus-copy">
-          Deepening my work in local LLM systems and agentic workflows — AI as part of a working decision-support system, not just a demo.
+          Local LLM systems and agentic workflows, with AI as one part of a working decision-support system.
         </p>
       </div>
       <div class="info-card">
         <h3>TRACKING</h3>
         <div class="focus-list">
           <span class="focus-pill">Agentic workflows</span>
-          <span class="focus-pill">RAG systems</span>
           <span class="focus-pill">Decision support</span>
           <span class="focus-pill">Local inference</span>
           <span class="focus-pill">Full-stack AI apps</span>
-          <span class="focus-pill">Product thinking</span>
         </div>
       </div>
     </div>
@@ -478,11 +278,31 @@
     <div class="project">
       <div class="project-num">01</div>
       <div>
-        <h3>FocusAI <span class="project-status">IN PROGRESS</span></h3>
+        <h3>Multi-Agent Financial Sentiment &amp; Conviction Platform <span class="project-status">IN PROGRESS</span></h3>
+        <p class="project-role">Role: AI Agent Developer</p>
         <p>
-          Desktop app that tracks application usage and screen time, then classifies productivity in real time.
-          Electron + React front end, Python backend, SQLite storage, with LangChain + Ollama running local
-          classification and an analytics dashboard for daily insights.
+          Separate LLM agents act as analysts on real-time market news: a quantitative data agent,
+          a sentiment and insider agent, and a counter-bias analyst. An adversarial evaluation loop
+          checks their output before a synthesis engine produces a final conviction score.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Multi-agent LLMs</span>
+          <span class="tag">Sentiment analysis</span>
+          <span class="tag">Real-time data</span>
+          <span class="tag">Conviction modeling</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-num">02</div>
+      <div>
+        <h3>FocusAI <span class="project-status">IN PROGRESS</span></h3>
+        <p class="project-role">Role: Solo Developer · Personal project</p>
+        <p>
+          Desktop app that tracks application usage and screen time and classifies productivity with a local LLM.
+          Electron and React front end, Python backend, SQLite storage, and a dashboard for daily usage
+          and distraction stats.
         </p>
         <div class="project-tags">
           <span class="tag">Electron</span>
@@ -496,32 +316,14 @@
     </div>
 
     <div class="project">
-      <div class="project-num">02</div>
-      <div>
-        <h3>Multi-Agent Financial Sentiment &amp; Conviction Platform <span class="project-status">IN PROGRESS</span></h3>
-        <p>
-          Several LLM agents collaborate to read real-time market news and sentiment: a quantitative data agent,
-          a sentiment &amp; insider agent, a counter-bias analyst, and an adversarial evaluation loop feeding a
-          synthesis engine that produces a final conviction score — reasoning more like a team of analysts than
-          a single model.
-        </p>
-        <div class="project-tags">
-          <span class="tag">Multi-agent LLMs</span>
-          <span class="tag">Sentiment analysis</span>
-          <span class="tag">Real-time data</span>
-          <span class="tag">Conviction modeling</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="project">
       <div class="project-num">03</div>
       <div>
-        <h3>Forest Fire Risk Monitoring System &amp; Conviction Platform <span class="project-status">DEPLOYED</span></h3>
+        <h3>Forest Fire Risk Monitoring System</h3>
+        <p class="project-role">Role: Data Pipeline Developer · NiFi flow and API integration</p>
         <p>
-          Real-time ETL pipeline processing NASA FIRMS VIIRS satellite data with Apache NiFi and Python — automated
-          extraction, transformation, and weather enrichment via OpenWeatherMap, classifying fire risk to generate
-          early-warning alerts.
+          Real-time ETL pipeline for NASA FIRMS VIIRS satellite data. Fire detections are pulled in,
+          enriched with OpenWeatherMap weather data and classified by risk level to generate alerts
+          for high-risk regions.
         </p>
         <div class="project-tags">
           <span class="tag">Apache NiFi</span>
@@ -532,7 +334,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -546,48 +347,35 @@
       <div class="skill-group">
         <h3>LANGUAGES</h3>
         <div class="skill-row">
-          <span class="chip">Python</span>
-          <span class="chip">Java</span>
-          <span class="chip">JavaScript</span>
-          <span class="chip">HTML</span>
-          <span class="chip">CSS</span>
+          <span class="chip">Python</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span>
+          <span class="chip">Java</span><span class="chip">HTML</span><span class="chip">CSS</span>
         </div>
       </div>
       <div class="skill-group">
         <h3>FRAMEWORKS &amp; LIBRARIES</h3>
         <div class="skill-row">
-          <span class="chip">LangChain</span>
-          <span class="chip">React</span>
-          <span class="chip">Electron</span>
-          <span class="chip">Framer Motion</span>
+          <span class="chip">LangChain</span><span class="chip">LangGraph</span><span class="chip">FastAPI</span>
+          <span class="chip">React</span><span class="chip">Electron</span><span class="chip">Framer Motion</span>
         </div>
       </div>
       <div class="skill-group">
         <h3>DATA</h3>
         <div class="skill-row">
-          <span class="chip">MySQL</span>
-          <span class="chip">SQLite</span>
+          <span class="chip">MySQL</span><span class="chip">SQLite</span>
         </div>
       </div>
       <div class="skill-group">
         <h3>TOOLING</h3>
         <div class="skill-row">
-          <span class="chip">Git / GitHub</span>
-          <span class="chip">Postman</span>
-          <span class="chip">Ollama</span>
-          <span class="chip">IntelliJ IDEA</span>
-          <span class="chip">VS Code</span>
-          <span class="chip">Maven</span>
+          <span class="chip">Git / GitHub</span><span class="chip">Docker</span><span class="chip">Postman</span>
+          <span class="chip">Ollama</span><span class="chip">IntelliJ IDEA</span><span class="chip">VS Code</span><span class="chip">Maven</span>
         </div>
       </div>
       <div class="skill-group" style="grid-column:1 / -1;">
         <h3>COURSEWORK</h3>
         <div class="skill-row">
-          <span class="chip">Machine Learning</span>
-          <span class="chip">NLP</span>
-          <span class="chip">Operating Systems</span>
-          <span class="chip">Computer Networks</span>
-          <span class="chip">OOP</span>
+          <span class="chip">Machine Learning</span><span class="chip">NLP</span><span class="chip">Operating Systems</span>
+          <span class="chip">Computer Networks</span><span class="chip">OOP</span>
         </div>
       </div>
     </div>
@@ -605,10 +393,9 @@
       <div class="timeline-date">2023 — 2027</div>
       <div class="timeline-body">
         <h3>B.Tech, Computer Science &amp; Engineering (AI &amp; ML)</h3>
-        <div class="org">MLR Institute of Technology, Hyderabad · CGPA 7/10</div>
+        <div class="org">MLR Institute of Technology, Hyderabad · CGPA 7.25/10</div>
       </div>
     </div>
-
     <div class="timeline-item">
       <div class="timeline-date">2021 — 2023</div>
       <div class="timeline-body">
@@ -616,7 +403,6 @@
         <div class="org">Telangana, India · CGPA 7.95/10</div>
       </div>
     </div>
-
     <div class="timeline-item">
       <div class="timeline-date">2020</div>
       <div class="timeline-body">
@@ -624,37 +410,32 @@
         <div class="org">Kakatiya Olympiad School · GPA 9.8/10</div>
       </div>
     </div>
-
     <div class="timeline-item">
       <div class="timeline-date">Hackathon</div>
       <div class="timeline-body">
-        <h3>Genesis — Game Development Hackathon</h3>
-        <p>Collaborated in a team to design and build a 3D game, contributing to gameplay implementation and feature integration under an agile workflow.</p>
+        <h3>Genesis: Game Development Hackathon</h3>
+        <p>Team project building a 3D game. Work covered gameplay implementation and feature integration in an agile workflow.</p>
       </div>
     </div>
-
     <div class="timeline-item">
       <div class="timeline-date">Hackathon</div>
       <div class="timeline-body">
-        <h3>Zenith Hackathon — FarmX</h3>
-        <p>Built an AI-powered smart farming solution offering crop recommendations, farm management, and data-driven decision support, from system design through presentation.</p>
+        <h3>Zenith Hackathon: FarmX</h3>
+        <p>AI-powered smart farming solution with crop recommendations, farm management and data-driven decision support.</p>
         <p style="display:flex; align-items:center; gap:16px;">
-          <a href="https://github.com/anirudh-beep/smart-farming-system" target="_blank" rel="noopener" aria-label="FarmX GitHub repository" style="display:inline-flex; color:var(--paper-dim); transition:color .18s;" onmouseover="this.style.color='var(--signal)'" onmouseout="this.style.color='var(--paper-dim)'">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
-            </svg>
+          <a href="https://github.com/anirudh-beep/smart-farming-system" target="_blank" rel="noopener" aria-label="FarmX GitHub repository" style="display:inline-flex; color:var(--paper-dim);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
           </a>
-          <a href="https://farmsuperx.vercel.app/" target="_blank" rel="noopener" style="color:var(--signal); text-decoration:underline;">View FarmX →</a>
+          <a href="https://farmsuperx.vercel.app/" target="_blank" rel="noopener" style="color:var(--signal); text-decoration:underline;">Live demo</a>
         </p>
       </div>
     </div>
-
   </div>
 </section>
 
-<section id="contact" class="contact-block" style="border-bottom:none;">
+<section id="contact" class="contact-block">
   <div class="wrap">
-    <h2>Have an internship or a project in mind? Let's talk.</h2>
+    <h2>Internship or project in mind? Get in touch.</h2>
     <div class="contact-grid">
       <a class="btn solid" href="mailto:anirudhreddymosra@gmail.com">anirudhreddymosra@gmail.com</a>
       <a class="btn" href="tel:+919398225148">+91 93982 25148</a>
@@ -666,41 +447,22 @@
 </section>
 
 <footer>
-  <div class="wrap" style="display:flex; justify-content:space-between; width:100%;">
-    <span>© 2026 Anirudh Reddy Mosra</span>
-    <span>Built with intent, not a template</span>
+  <div class="wrap">
+    <span>&copy; 2026 Anirudh Reddy Mosra</span>
+    <span>Hyderabad, India</span>
   </div>
 </footer>
 
 <script>
-  const headlines = [
-    "I build AI/ML applications, from model to interface.",
-    "CS student focused on AI/ML and full-stack development.",
-    "I turn LLMs into applications people can actually use.",
-    "I build full-stack apps with AI at the core.",
-    "Studying AI/ML, building projects that put it to work.",
-    "I work across Python, Java, and React to ship AI tools."
-  ];
-  const el = document.getElementById('headline');
-  if (el) {
-    el.textContent = headlines[Math.floor(Math.random() * headlines.length)];
-  }
-</script>
-<script>
-  const themeToggle = document.getElementById('themeToggle');
-  const savedTheme = localStorage.getItem('theme'); // 'dark' is default; only 'light' is stored explicitly
-  if (savedTheme === 'light') {
-    document.documentElement.setAttribute('data-theme', 'light');
-  }
-  themeToggle.addEventListener('click', () => {
-    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-    if (isLight) {
-      document.documentElement.removeAttribute('data-theme');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.setAttribute('data-theme', 'light');
-      localStorage.setItem('theme', 'light');
-    }
+  var root = document.documentElement;
+  var saved = null;
+  try { saved = localStorage.getItem('theme'); } catch (e) {}
+  if (saved === 'light') root.setAttribute('data-theme', 'light');
+  document.getElementById('themeToggle').addEventListener('click', function(){
+    var light = root.getAttribute('data-theme') === 'light';
+    if (light) root.removeAttribute('data-theme');
+    else root.setAttribute('data-theme', 'light');
+    try { localStorage.setItem('theme', light ? 'dark' : 'light'); } catch (e) {}
   });
 </script>
 </body>
